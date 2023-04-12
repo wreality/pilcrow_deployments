@@ -4,7 +4,6 @@ metadata:
   name: pilcrow-mysql
   namespace: pilcrow
 spec:
-  storageClassName: do-block-storage
   accessModes:
     - ReadWriteOnce
   resources:
