@@ -18,12 +18,12 @@ spec:
             - migrate
             - --force
             - --seed
-          envFrom:
-            - configMapRef:
-                name: pilcrow
-            - secretRef:
-                name: pilcrow
-            - secretRef:
-                name: pilcrow-mysql
+        envFrom:
+          - configMapRef:
+              name: pilcrow
+          - secretRef:
+              name: pilcrow
+          - secretRef:
+              name: pilcrow-mysql
       restartPolicy: Never
   backoffLimit: 2
