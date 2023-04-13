@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pilcrow-fpm
+  namespace: pilcrow
+  labels:
+    tier: backend
+    layer: fpm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: backend
+      layer: fpm
+  template:
+    metadata:
+      labels:
+        tier: backend
+        layer: fpm
+    spec:
+      containers:
+        - name: fpm
+          image: ghcr.io/wreality/pilcrow/fpm:8750aa36
+          ports:
+            - containerPort: 9000

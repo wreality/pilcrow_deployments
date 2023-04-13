@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pilcrow-web
+  labels:
+    namespace: pilcrow
+    tier: backend
+    layer: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: backend
+      layer: webserver
+  template:
+    metadata:
+      labels:
+        tier: backend
+        layer: webserver
+    spec:
+      containers:
+        - name: webserver
+          image: ghcr.io/wreality/pilcrow/web:8750aa36
+          ports:
+            - containerPort: 80
+          env:
+            # Inject the FPM Host as we did with Docker Compose
+            - name: FPM_HOST
+              value: pilcrow-fpm:9000
