@@ -26,7 +26,8 @@ spec:
           args:
             - artisan
             - migrate
-            - --force --seed
+            - --force
+            - --seed
           envFrom:
             - configMapRef:
                 name: pilcrow
