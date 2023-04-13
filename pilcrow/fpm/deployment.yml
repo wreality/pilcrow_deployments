@@ -29,11 +29,11 @@ spec:
             - --force --seed
           envFrom:
             - configMapRef:
-              name: pilcrow
+                name: pilcrow
             - secretRef:
-              name: pilcrow
+                name: pilcrow
             - secretRef:
-              name: pilcrow-mysql
+                name: pilcrow-mysql
       containers:
         - name: fpm
           image: ghcr.io/wreality/pilcrow/fpm:8750aa36
@@ -41,8 +41,8 @@ spec:
             - containerPort: 9000
           envFrom:
             - configMapRef:
-              name: pilcrow
+                name: pilcrow
             - secretRef:
-              name: pilcrow
+                name: pilcrow
             - secretRef:
-              name: pilcrow-mysql
+                name: pilcrow-mysql
