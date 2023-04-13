@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: initial-migrate
+  name: initial-migration
   namespace: pilcrow
   annotations:
     argocd.argoproj.io/hook: PostSync
@@ -15,7 +15,7 @@ spec:
             - php
           args:
             - artisan
-            - migrate
+            - migrate:fresh
             - --force
             - --seed
           envFrom:
