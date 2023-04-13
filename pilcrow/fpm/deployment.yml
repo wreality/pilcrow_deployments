@@ -18,8 +18,31 @@ spec:
         tier: backend
         layer: fpm
     spec:
+      initContainers:
+        - name: migrations
+          image: ghcr.io/wreality/pilcrow/fpm:8750aa36
+          command:
+            - php
+          args:
+            - artisan
+            - migrate
+            - --force --seed
+          envFrom:
+            - configMapRef:
+              name: pilcrow
+            - secretRef:
+              name: pilcrow
+            - secretRef:
+              name: pilcrow-mysql
       containers:
         - name: fpm
           image: ghcr.io/wreality/pilcrow/fpm:8750aa36
           ports:
             - containerPort: 9000
+          envFrom:
+            - configMapRef:
+              name: pilcrow
+            - secretRef:
+              name: pilcrow
+            - secretRef:
+              name: pilcrow-mysql
