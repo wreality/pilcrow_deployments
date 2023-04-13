@@ -9,21 +9,21 @@ spec:
   template:
     spec:
       containers:
-      - name: fpm-dev
-        image: ghcr.io/wreality/pilcrow/fpm-dev:8750aa36
-        command:
+        - name: fpm-dev
+          image: ghcr.io/wreality/pilcrow/fpm-dev:8750aa36
+          command:
             - php
           args:
             - artisan
             - migrate
             - --force
             - --seed
-        envFrom:
-          - configMapRef:
-              name: pilcrow
-          - secretRef:
-              name: pilcrow
-          - secretRef:
-              name: pilcrow-mysql
+          envFrom:
+            - configMapRef:
+                name: pilcrow
+            - secretRef:
+                name: pilcrow
+            - secretRef:
+                name: pilcrow-mysql
       restartPolicy: Never
   backoffLimit: 2
