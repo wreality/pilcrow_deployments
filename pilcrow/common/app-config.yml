@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: laravel-in-kubernetes
+  name: pilcrow
+  namespace: pilcrow
 data:
   APP_NAME: "Pilcrow"
   APP_ENV: "local"
