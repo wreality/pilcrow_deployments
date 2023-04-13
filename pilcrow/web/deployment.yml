@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pilcrow-web
+  namespace: pilcrow
   labels:
-    namespace: pilcrow
     tier: backend
     layer: webserver
 spec:
