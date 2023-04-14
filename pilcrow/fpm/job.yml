@@ -11,6 +11,7 @@ spec:
       containers:
         - name: fpm-dev
           image: ghcr.io/mesh-research/pilcrow/fpm-dev:pr-1813
+          imagePullPolicy: always
           command:
             - php
           args:

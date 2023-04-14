@@ -21,6 +21,7 @@ spec:
       containers:
         - name: fpm
           image: ghcr.io/mesh-research/pilcrow/fpm:pr-1813
+          imagePullPolicy: Always
           ports:
             - containerPort: 9000
           envFrom:

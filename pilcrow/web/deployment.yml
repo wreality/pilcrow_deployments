@@ -21,6 +21,7 @@ spec:
       containers:
         - name: webserver
           image: ghcr.io/mesh-research/pilcrow/web:pr-1813
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
