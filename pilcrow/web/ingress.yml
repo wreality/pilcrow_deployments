@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: pilcrow-web
 spec:
+  tls:
+    - hosts:
+        - pilcrow.lndo.site
+      secretName: pilcrow-tls
   ingressClassName: nginx
   rules:
     - host: pilcrow.lndo.site
