@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: fpm
-          image: ghcr.io/wreality/pilcrow/fpm:8750aa36
+          image: ghcr.io/mesh-research/pilcrow/fpm:pr-1813
           ports:
             - containerPort: 9000
           envFrom:

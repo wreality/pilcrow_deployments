@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: fpm-dev
-          image: ghcr.io/wreality/pilcrow/fpm-dev:8750aa36
+          image: ghcr.io/mesh-research/pilcrow/fpm-dev:pr-1813
           command:
             - php
           args:

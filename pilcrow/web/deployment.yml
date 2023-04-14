@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: ghcr.io/wreality/pilcrow/web:8750aa36
+          image: ghcr.io/mesh-research/pilcrow/web:pr-1813
           ports:
             - containerPort: 80
           env:
