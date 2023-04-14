@@ -8,7 +8,7 @@ data:
   APP_ENV: "local"
   APP_DEBUG: "true"
   # Once you have an external URL for your application, you can add it here.
-  APP_URL: "https://pilcrow.lndo.site"
+  APP_URL: "http://pilcrow.lndo.site"
 
   # Update the LOG_CHANNEL to stdout for Kubernetes
   LOG_CHANNEL: "stdout"
